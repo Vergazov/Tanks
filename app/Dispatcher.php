@@ -6,5 +6,10 @@ require_once 'app/MessageCreator.php';
 
 class Dispatcher
 {
+    public function getRightTanks($aim): array
+    {
+        $searcher = new TankSearcher();
 
+        $rightTanks = $searcher->findRight($aim);
+    }
 }
