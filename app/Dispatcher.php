@@ -11,5 +11,9 @@ class Dispatcher
         $searcher = new TankSearcher();
 
         $rightTanks = $searcher->findRight($aim);
+
+        $sorter = new Sorter();
+
+        $sortedRightTanks = $sorter->sortBySpeed($rightTanks);
     }
 }
