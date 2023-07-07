@@ -9,9 +9,9 @@ class Tank
 
     public function __construct($name,  $maxSpeed, $armorPiercing)
     {
-        $this->name - $name;
-        $this->maxSpeed - $maxSpeed;
-        $this->armorPiercing - $armorPiercing;
+        $this->name = $name;
+        $this->maxSpeed = $maxSpeed;
+        $this->armorPiercing = $armorPiercing;
     }
 
     public function getName(): string
