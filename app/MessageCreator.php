@@ -12,26 +12,27 @@ class MessageCreator
         }
         if ($amount === 1) {
             $tank = $sortedRightTanks[0];
+            // Сохраняю в tank объект танка, чтобы обратиться к методу getName() ниже.
             return "Чтобы пробить броню толщиной " . $aim->getArmorThickness() . " мм нужен танк марки " . $tank->getName() .
-                " со скоростью перемещения " . $tank->getMaxSpeed();
+                " со скоростью перемещения " . $tank->getMaxSpeed() . ' км/ч';
         }
         if ($amount > 1) {
-            return "Чтобы пробить броню толщиной " . $aim->getArmorThickness() . " мм подойдет любой из этих танков: " . $this->getTanksNames($sortedRightTanks);
+            return "Чтобы пробить броню толщиной " . $aim->getArmorThickness() . " мм подойдет любой из этих танков: " . $this->getTanksCharacteristics($sortedRightTanks);
         }
 
     }
 
-    private function getTanksNames($sortedRightTanks): string
+    private function getTanksCharacteristics($sortedRightTanks): string
     {
-        $tanksNames = [];
+        $tanksCharacteristics = [];
         foreach($sortedRightTanks as $tank) {
-            $tanksNames[] = $tank->getName();
+            $tanksCharacteristics[] = $tank->getName() . '(' . $tank->getMaxSpeed() . 'км/ч)';
         }
-        return $this->glueTanksNames($tanksNames);
+        return $this->glueTanksCharacteristics($tanksCharacteristics);
     }
 
-    private function glueTanksNames($tanksNames): string
+    private function glueTanksCharacteristics($tanksCharacteristics): string
     {
-        return implode(', ', $tanksNames);
+        return implode(', ', $tanksCharacteristics);
     }
 }
