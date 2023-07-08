@@ -6,15 +6,12 @@ require_once 'app/MessageCreator.php';
 
 class Dispatcher
 {
-    public function getRightTanks($aim)
+    public function getRightTanks($aim): string
     {
-        $searcher = new TankSearcher();
 
-        $rightTanks = $searcher->findRight($aim);
+        $rightTanks = (new TankSearcher())->findRight($aim);
 
-        $sorter = new Sorter();
-
-        $sortedRightTanks = $sorter->sortBySpeed($rightTanks);
+        $sortedRightTanks = (new Sorter())->sortBySpeed($rightTanks);
 
         return (new MessageCreator())->create($aim,$sortedRightTanks);
 

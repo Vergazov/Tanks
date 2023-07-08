@@ -21,7 +21,7 @@ class MessageCreator
 
     }
 
-    private function getTanksNames($sortedRightTanks)
+    private function getTanksNames($sortedRightTanks): string
     {
         $tanksNames = [];
         foreach($sortedRightTanks as $tank) {

@@ -10,7 +10,8 @@ class Aim
         $this->armorThickness = $armorThickness;
     }
 
-    public function getArmorThickness(){
+    public function getArmorThickness(): int
+    {
         return $this->armorThickness;
     }
 }
