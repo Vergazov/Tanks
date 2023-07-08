@@ -12,7 +12,7 @@ class MessageCreator
         }
         if ($amount === 1) {
             $tank = $sortedRightTanks[0];
-            // Сохраняю в tank объект танка, чтобы обратиться к методу getName() ниже.
+            // Сохраняю в $tank объект танка, чтобы обратиться к методу getName() ниже.
             return "Чтобы пробить броню толщиной " . $aim->getArmorThickness() . " мм нужен танк марки " . $tank->getName() .
                 " со скоростью перемещения " . $tank->getMaxSpeed() . ' км/ч';
         }
