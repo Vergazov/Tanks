@@ -15,10 +15,8 @@ $aims = [
     new Aim(61)
 ];
 
-$chooser = new Dispatcher();
-
 foreach ($aims as $aim){
-    $messages[] = $chooser->getRightTanks($aim);
+    $messages[] = (new Dispatcher())->getRightTanks($aim);
 }
 
 ?>
