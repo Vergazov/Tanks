@@ -9,19 +9,17 @@ class Tank
     private int $maxSpeed;
     private int $armorPiercing;
 
-    public function __construct($name,$maxSpeed,$armorPiercing)
+    public function __construct($name='',$maxSpeed=0,$armorPiercing=0)
     {
-//        $this->tanks = [
-//            new Tank('ТП-41',80,10),
-//            new Tank('ТП-32',60,20),
-//            new Tank('ТШ-605',90,5),
-//            new Tank('ТШ-607',90,7),
-//            new Tank('ТТ-22',40,20),
-//            new Tank('ТТ-25',40,50)
-//        ];
-        $this->name = $name;
-        $this->maxSpeed = $maxSpeed;
-        $this->armorPiercing = $armorPiercing;
+        $this->tanks = [
+            new Tank('ТП-41',80,10),
+            new Tank('ТП-32',60,20),
+            new Tank('ТШ-605',90,5),
+            new Tank('ТШ-607',90,7),
+            new Tank('ТТ-22',40,20),
+            new Tank('ТТ-25',40,50)
+        ];
+
     }
 
     public function getName(): string
