@@ -4,10 +4,14 @@ namespace App;
 
 class Sorter
 {
-    public function sortBySpeed($rightTanks): array
+    public function sortBySpeed($rightTanks)
     {
-        usort($rightTanks, static fn($first, $second) => $first->getMaxSpeed() <=> $second->getMaxSpeed());
+        usort($rightTanks,[__CLASS__, 'sort'] );
         return $rightTanks;
 
+    }
+    public function sort($first, $second): int
+    {
+        return $first->getMaxSpeed() <=> $second->getMaxSpeed();
     }
 }
