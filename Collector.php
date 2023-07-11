@@ -1,7 +1,7 @@
 <?php
+namespace App;
 
-require_once 'app/Aim.php';
-require_once 'app/Dispatcher.php';
+require_once 'vendor/autoload.php';
 
 $aims = [
     new Aim(2),

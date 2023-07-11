@@ -1,6 +1,6 @@
 <?php
 
-require_once 'app/Tank.php';
+namespace App;
 
 class TankSearcher
 {

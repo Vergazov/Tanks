@@ -1,8 +1,6 @@
 <?php
 
-require_once 'app/TankSearcher.php';
-require_once 'app/Sorter.php';
-require_once 'app/MessageCreator.php';
+namespace App;
 
 class Dispatcher
 {
