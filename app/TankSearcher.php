@@ -16,7 +16,7 @@ class TankSearcher
         ];
         $rightTanks = [];
         foreach($tanks as $tank){
-            if($tank->getArmorPiercing() > $aim->getArmorThickness()){
+            if($tank->getArmorPiercing() >= $aim->getArmorThickness()){
                 $rightTanks[] = $tank;
             }
         }
