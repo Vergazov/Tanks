@@ -14,10 +14,12 @@ class TankSearcher
             new Tank('ТТ-22',40,20),
             new Tank('ТТ-25',40,50)
         ];
+
         $rightTanks = [];
         foreach($tanks as $tank){
             if($tank->getArmorPiercing() >= $aim->getArmorThickness()){
                 $rightTanks[] = $tank;
+
             }
         }
         return $rightTanks;
