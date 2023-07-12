@@ -6,12 +6,21 @@ class Sorter
 {
     public function sortBySpeed($rightTanks)
     {
-        usort($rightTanks,[__CLASS__, 'sort'] );
+        usort($rightTanks, static function ($first, $second){
+            {
+                if ($first === $second) {
+                    return 0;
+                }
+                if ($first < $second) {
+                    return -1;
+                }
+                if ($first > $second) {
+                    return 1;
+                }
+            }
+        } );
         return $rightTanks;
 
     }
-    public function sort($first, $second): int
-    {
-        return $first->getMaxSpeed() <=> $second->getMaxSpeed();
-    }
+
 }
